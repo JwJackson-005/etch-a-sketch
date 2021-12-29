@@ -1,16 +1,62 @@
-.row {
+#title {
+    font-size: 48px;
+    font-weight: bold;
+    height: 10vh;
     display:flex;
-    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
 }
 
-.col {
+.controls {
+    background-color: wheat;
+    padding: 5px;
+    font-size: 18px;
+    border-radius: 10px;
+    width: 150px;
+}
+
+
+#gridContainer {
+    display: grid;
+    width: 400px;
+    height: 400px;
+    margin-top: 5vh;
+    grid-template-columns: repeat(20, 1fr);
+    grid-template-rows: repeat(20, 1fr);
+    background-color: white;
     border: solid;
 }
 
-#gridContainer {
+#controlsContainer {
+    display:flex;
+    align-self: stretch;
+    height: 35vh;
+    padding: 0 5vw;
+}
+
+.thumbStickContainer {
     display: flex;
-    width: 800px;
-    height: 800px;
+    background-color: red;
+}
+
+.thumbStick {
+    display: flex;
+    width: 20vh;
+    height: 20vh;
+    border-radius: 50%;
+    margin-top: 5vh;
+    background-color: black;
+}
+
+#controlOptions {
+    flex: 4;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-top: 5vh;
+    gap: 5vh;
+    align-items: center;
 }
 
 body {

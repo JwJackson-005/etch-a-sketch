@@ -1,29 +1,22 @@
-let gridSize = 100;
+let gridSize = 20;
 
 function buildGrid() {
     const container = document.querySelector('#gridContainer');
-    const gridLength = container.clientHeight;
-    console.log(gridLength);
+    container.style.gridTemplateRows = `repeat(${gridSize}, 1fr)`;
+    container.style.gridTemplateColumns = `repeat(${gridSize}, 1fr)`;
 
-    for (let i = 0; i < gridSize; i++){
-        let row = document.createElement('div');
-        row.classList.add('row');
-        for (let j = 0; j < gridSize; j++) {
-            let col = document.createElement('div');
-            col.classList.add('col');
-            col.style.height = `${gridLength/gridSize}px`;
-            col.style.width = `${gridLength/gridSize}px`;
-            col.style.backgroundColor = 'white';
-            col.addEventListener('mouseenter', color);
-            row.appendChild(col);
-        }
-        container.appendChild(row);
+
+    for (let i = 0; i < gridSize*gridSize; i++){
+        const cell = document.createElement('div');
+        cell.classList.add('cell');
+        cell.addEventListener('mouseover', color);
+        container.appendChild(cell);
     }
 }
 
 function color(e) {
         const cell = e.target;
-        cell.style.backgroundColor = 'red';
+        cell.style.backgroundColor = 'black';
 }
 
 function initialize() {
@@ -33,7 +26,7 @@ function initialize() {
 }
 
 function clearGrid() {
-    const cells = document.querySelectorAll('.col');
+    const cells = document.querySelectorAll('.cell');
 
     for (let cell of cells) {
         cell.remove();
