@@ -8,7 +8,8 @@
 
 }
 
-.controls {
+.controls,
+.sizeControls {
     background-color: wheat;
     padding: 5px;
     font-size: 18px;
@@ -16,11 +17,15 @@
     width: 150px;
 }
 
+#clearButton {
+    width: 300px;
+}
+
 
 #gridContainer {
     display: grid;
-    width: 400px;
-    height: 400px;
+    width: 900px;
+    height: 450px;
     margin-top: 5vh;
     grid-template-columns: repeat(20, 1fr);
     grid-template-rows: repeat(20, 1fr);
@@ -46,7 +51,11 @@
     height: 20vh;
     border-radius: 50%;
     margin-top: 5vh;
-    background-color: black;
+    border:solid;
+}
+
+.rainbow {
+    background: linear-gradient(to right, red, orange, yellow, green, cyan, blue, violet);
 }
 
 #controlOptions {
@@ -55,7 +64,7 @@
     flex-direction: column;
     justify-content: flex-start;
     padding-top: 5vh;
-    gap: 5vh;
+    gap: 20px;
     align-items: center;
 }
 
